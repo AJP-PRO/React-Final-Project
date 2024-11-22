@@ -3,7 +3,8 @@ import NavBackground from "../assets/LoTR_Ring background.jpg"
 
 const Nav = () => {
   return (
-    <nav>
+    <section id="landing">
+        <nav>
             <div class="row">
                 <div class="nav__container">
                     <div class="background">
@@ -30,6 +31,7 @@ const Nav = () => {
                 </div>
             </div>
         </nav>
+    </section>
   )
 }
 

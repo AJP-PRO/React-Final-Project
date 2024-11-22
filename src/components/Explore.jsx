@@ -1,10 +1,12 @@
 import React from 'react'
 
 const Explore = () => {
+
+
   return (
-      <section class="search__results">
-        <h1 class="search__h1">Search Results: </h1>
-        <select id="filter" // onchange="filterMedia(event)">
+      <section className="search__results">
+        <h1 className="search__h1">Search Results: </h1>
+        <select id="filter" value={filter} onChange={filterMedia}>
             <option value="" disabled selected>Sort</option>
             <option value="OLD_TO_NEW">Production date, old to new</option>
             <option value="NEW_TO_OLD">Production date, new to old</option>
@@ -12,12 +14,14 @@ const Explore = () => {
             <option value="MOVIES">Movies</option>
         </select>
       </section>
-    <section class="media__section">
-        <div class="media media__style">
-            <i class="fas fa-spinner books__loading--spinner"></i>
+    <section className="media__section">
+        <div className="media media__style">
+            <i className="fas fa-spinner books__loading--spinner"></i>
         </div>
     </section>
   )
 }
+
+
 
 export default Explore

@@ -1,17 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const Explore = () => {
+const Explore = ({ setFilter, filter }) => {
 
+const filterMedia = (event) => {
+  setFilter(event.target.value)
+}
 
   return (
+    <>
       <section className="search__results">
         <h1 className="search__h1">Search Results: </h1>
-        <select id="filter" value={filter} onChange={filterMedia}>
-            <option value="" disabled selected>Sort</option>
-            <option value="OLD_TO_NEW">Production date, old to new</option>
-            <option value="NEW_TO_OLD">Production date, new to old</option>
-            <option value="GAMES">Games</option>
-            <option value="MOVIES">Movies</option>
+        <select id="filter" defaultValue={filter} onChange={filterMedia}>
+            <option defaultValue="" disabled selected>Sort</option>
+            <option defaultValue="OLD_TO_NEW">Production date, old to new</option>
+            <option defaultValue="NEW_TO_OLD">Production date, new to old</option>
+            <option defaultValue="GAMES">Games</option>
+            <option defaultValue="MOVIES">Movies</option>
         </select>
       </section>
     <section className="media__section">
@@ -19,6 +23,7 @@ const Explore = () => {
             <i className="fas fa-spinner books__loading--spinner"></i>
         </div>
     </section>
+    </>
   )
 }
 

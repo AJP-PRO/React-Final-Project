@@ -1,5 +1,6 @@
 import React from 'react'
 import NavBackground from "../assets/LoTR_Ring background.jpg"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Nav = () => {
   return (
@@ -12,7 +13,7 @@ const Nav = () => {
                     </div>
                     <div class="nav__wrapper">
                         <div class="logo">
-                            <i class="fa-solid fa-clapperboard"></i>
+                        <FontAwesomeIcon icon={faClapperboardPlay} />
                             <h1 class="logo__title">LoTR Media</h1>
                         </div>
                         <ul class="nav__links">

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { DataFetcher } from '../components/ui/DataFetcher'
+import  DataFetcher from '../components/ui/DataFetcher'
 
 const Explore = ({ setFilter, filter }) => {
 const [ dataFromChild, setDataFromChild ] = useState(null);
@@ -29,11 +29,11 @@ const filterMedia = (event) => {
         <div className="media media__style">
             <i className="fas fa-spinner books__loading--spinner"></i>
         </div>
-    <div>
+        <div>
       <h1>Parent Component</h1>
       {dataFromChild && <p>Data from Child: {JSON.stringify(dataFromChild)}</p>}
       <DataFetcher onDataFetch={handleChildData} />
-          </div>
+    </div>
     </section>
     </>
   )

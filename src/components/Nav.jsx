@@ -13,7 +13,7 @@ const Nav = () => {
                     </div>
                     <div class="nav__wrapper">
                         <div class="logo">
-                        <FontAwesomeIcon icon={faClapperboardPlay} />
+                        <FontAwesomeIcon icon="fa-solid fa-clapperboard" />
                             <h1 class="logo__title">LoTR Media</h1>
                         </div>
                         <ul class="nav__links">
@@ -26,7 +26,7 @@ const Nav = () => {
                         <h1 class="nav__title"> Browse the Epics</h1>
                         <div class="search__wrapper--icon">
                             <input class="search__bar" type="text" placeholder="Search by production year, title, or keyword" onchange="onSearchChange(event)"/>
-                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <FontAwesomeIcon icon="faMagnifyingGlass" className="fa-magnifying-glass"/>
                         </div>
                     </div>
                 </div>

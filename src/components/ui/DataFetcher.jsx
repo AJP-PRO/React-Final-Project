@@ -1,30 +1,27 @@
-import React, { useEffect } from 'react'
+import React, { useEffect } from "react";
 
-const DataFetcher = ({onDataFetch}) =>{
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                let mediaData =[];
-                
-                const movies = await fetch ('https://omdbapi.com/?apikey=a7412df9&s=lord%20of%20the%20rings');
-                const movieData = await movies.json();
-                const movies2 = await fetch("https://omdbapi.com/?apikey=a7412df9&s=lord%20of%20the%20rings");
-                const movieData2 = await movies2.json();
-                mediaData = [...movieData.Search, ...movieData2.Search];
+const DataFetcher = ({ searchTerm }) => {
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const movies2 = await fetch(
+          `https://www.omdbapi.com/?apikey=a7412df9&s=${searchTerm}`
+        );
+        const movieData2 = await movies2.json();
 
-                if(movieData.Search)
-                {
-                    onDataFetch(mediaData);
-                }               
-            }
-            catch (error) {
-                console.error('Error fetching data:', error)
-            }
-        };
-        fetchData();
-    },[onDataFetch]);   
+        console.log(movieData2.Search);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+    fetchData();
+  }, [searchTerm]);
 
-    return <div><p>Child is fetching data....</p></div>
+  return (
+    <div>
+      <p>Child is fetching data....</p>
+    </div>
+  );
 };
 
-export default DataFetcher
+export default DataFetcher;

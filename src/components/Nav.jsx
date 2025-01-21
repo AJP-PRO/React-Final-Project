@@ -2,7 +2,12 @@ import React from 'react'
 import NavBackground from "../assets/LoTR_Ring background.jpg"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const Nav = () => {
+const Nav = ({setSearchTerm}) => {
+    function onSearchChange (event) {
+setSearchTerm(event.target.value)
+    }
+
+
   return (
     <section id="landing">
         <nav>
@@ -25,7 +30,7 @@ const Nav = () => {
                     <div class="search__wrapper">
                         <h1 class="nav__title"> Browse the Epics</h1>
                         <div class="search__wrapper--icon">
-                            <input class="search__bar" type="text" placeholder="Search by production year, title, or keyword" onchange="onSearchChange(event)"/>
+                            <input class="search__bar" type="text" placeholder="Search by production year, title, or keyword" onChange={(e) => onSearchChange(e)}/>
                             <FontAwesomeIcon icon="faMagnifyingGlass" className="fa-magnifying-glass"/>
                         </div>
                     </div>
